@@ -1,0 +1,22 @@
+[package]
+name = "autonomo-arabic-reshaper"
+version = "1.0.0"
+edition = "2024"
+description = "Arabic text shaper + visual RTL reverser tailored for game modding (RimWorld, Unity LTR UIs). Handles tags, escapes, entities, and common UI artifacts."
+readme = "README.md"
+repository = "https://github.com/AutonomoAI/arabic-reshaper" 
+license = "MIT"
+keywords = ["arabic", "rtl", "reshaping", "bidi", "localization"]
+categories = ["text-processing", "internationalization", "game-development"]
+exclude = ["/target", "/Cargo.lock", "build.sh", "coverage.sh"]
+
+[dependencies]
+
+[features]
+default = []
+std = []  # future: optional std-only helpers if needed
+
+[profile.fast-dev]
+inherits = "dev"
+opt-level = 0              # No optimization (fastest)
+codegen-units = 512        # Maximum parallelism
